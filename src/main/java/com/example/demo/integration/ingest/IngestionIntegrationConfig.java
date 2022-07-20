@@ -131,7 +131,7 @@ public class IngestionIntegrationConfig {
         exit("Integration flow complete, shutting down JVM");
     }
 
-    @ServiceActivator(inputChannel = "application.errorChannel")
+    @ServiceActivator(inputChannel = "errorChannel")
     public void handleError(Exception ex) {
         exit("Error occurred in integration flow, shutting down JVM", ex);
     }

@@ -121,7 +121,7 @@ public class ExtractionIntegrationConfig {
         System.exit(0); // kills the JVM when all integration steps are finished, this allows single run scheduling
     }
 
-    @ServiceActivator(inputChannel = "application.errorChannel")
+    @ServiceActivator(inputChannel = "errorChannel")
     public void handleError(Exception ex) {
         log.error("Error occurred in integration flow, shutting down JVM", ex);
         System.exit(0); // kills the JVM when all integration steps are finished, this allows single run scheduling
